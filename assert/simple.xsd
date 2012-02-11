@@ -1,0 +1,51 @@
+<schema
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:smpl="http://www.rackspace.com/test/simple"
+    targetNamespace="http://www.rackspace.com/test/simple">
+
+    <element name="simple-list" type="smpl:SimpleList"/>
+
+    <element name="simple" type="smpl:SimpleBase">
+        <alternative test="@type eq 'A'" type="smpl:SimpleA"/>
+        <alternative test="@type eq 'B'" type="smpl:SimpleB"/>
+    </element>
+
+    <!-- Complex Types -->
+    <complexType name="SimpleList">
+        <sequence>
+            <element ref="smpl:simple" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="SimpleBase">
+        <attribute name="id" type="xsd:ID" use="required"/>
+        <attribute name="type" type="smpl:SimpleType" use="required"/>
+    </complexType>
+
+    <complexType name="SimpleA">
+        <complexContent>
+            <extension base="smpl:SimpleBase">
+                <attribute name="a" type="xsd:string" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="SimpleB">
+        <complexContent>
+            <extension base="smpl:SimpleBase">
+                <attribute name="b" type="xsd:string" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <!-- Simple Types -->
+    <simpleType name="SimpleType">
+        <restriction base="xsd:string">
+            <enumeration value="A"/>
+            <enumeration value="B"/>
+        </restriction>
+    </simpleType>
+</schema>
