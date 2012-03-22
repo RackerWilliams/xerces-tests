@@ -1,0 +1,6 @@
+<usage xmlns="http://docs.rackspace.com/usage/core"
+       xmlns:monitor="http://docs.rackspace.com/usage/monitoring"
+       version="2" a="12334" uuid="4a2b42f4-6c63-11e1-815b-7fcbcf67f549"
+       startTime="2012-03-12T11:51:11Z" foo="bar">
+    <monitor:usage version="1" label="Test Label"/>
+</usage>
