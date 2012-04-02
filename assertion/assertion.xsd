@@ -1,0 +1,19 @@
+<schema
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:tst="http://www.rackspace.com/test/assertion"
+    targetNamespace="http://www.rackspace.com/test/assertion">
+
+    <element name="even" type="tst:Even"/>
+
+    <!-- Simple Types -->
+    <simpleType name="Even">
+        <restriction base="xsd:int">
+            <minInclusive value="0"/>
+            <maxInclusive value="100"/>
+            <assertion test="$value mod 2 = 0"/>
+        </restriction>
+    </simpleType>
+</schema>
