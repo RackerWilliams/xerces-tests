@@ -1,0 +1,6 @@
+<number 
+    xmlns="http://www.rackspace.com/test/assertion"
+    xmlns:tst="http://www.rackspace.com/test/assertion"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:type="tst:LessThan101"
+    >101</number>

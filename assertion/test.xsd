@@ -1,0 +1,11 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+   <!-- <xs:element name="X" type="xs:integer"/> -->
+	
+   <xs:simpleType name="EvenInteger">
+	  <xs:restriction base="xs:integer">
+	       <xs:assertion test="$value mod 2 = 0"/>
+	  </xs:restriction>
+   </xs:simpleType>
+	
+</xs:schema>

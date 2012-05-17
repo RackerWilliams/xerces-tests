@@ -1,0 +1,19 @@
+<schema
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:tst="http://www.rackspace.com/test/assertion"
+    targetNamespace="http://www.rackspace.com/test/assertion">
+
+    <element name="less" type="tst:LessThan101"/>
+    <element name="number" type="xsd:int"/>
+
+    <!-- Simple Types -->
+    <simpleType name="LessThan101">
+        <restriction base="xsd:int">
+            <minInclusive value="0"/>
+            <maxInclusive value="100"/>
+        </restriction>
+    </simpleType>
+</schema>
