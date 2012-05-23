@@ -1,0 +1,17 @@
+<schema
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:tst="http://www.rackspace.com/test/simple"
+    targetNamespace="http://www.rackspace.com/test/simple">
+
+    <element name="test" type="tst:Duration"/>
+
+    <complexType name="Duration">
+        <attribute name="start" type="xsd:dateTime" use="required"/>
+        <attribute name="end" type="xsd:dateTime" use="required"/>
+        <assert test="(@end - @start) le xsd:dayTimeDuration('P1D')"/>
+    </complexType>
+
+</schema>
