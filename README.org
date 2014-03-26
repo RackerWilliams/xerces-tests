@@ -1,0 +1,31 @@
+* XSD Tests
+
+
+The following tests are used to check edge cases that have bitten us
+in the past in the Xerces XSD 1.1 implementation.
+
+** Running tests
+
+You'll need maven 3 to run the tests.  Simply type:
+
+mvn test
+
+You can run these tests against the Saxon EE implemntation, but this
+will require a license.  To run against Saxon EE type:
+
+mvn test -Dtest.xsd.impl=Saxon
+
+I usually do:
+
+mvn test -Dtest.xsd.impl=Saxon && mvn test
+
+
+** How tests work
+
+In the xsd_tests directory there will be a test directory named X
+
+X/X.xsd is the XSD we are testing
+X/good/*  Contains good instances that should pass validation
+X/bad/*   Contains bad instances that should fail validation
+
+
