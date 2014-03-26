@@ -1,0 +1,4 @@
+<simple-list xmlns="http://www.rackspace.com/test/simple">
+    <simple id="id29299" type="A" a="apple" foo="bar"/>
+    <simple id="id29300" type="B" b="blue"/>
+</simple-list>
