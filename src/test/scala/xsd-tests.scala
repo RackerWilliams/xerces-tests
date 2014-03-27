@@ -21,7 +21,7 @@ class XSDTestSuite extends FunSuite {
   def isXSDFile (f : File) = f.getName().endsWith(".xsd")
 
   val useSaxon = (System.getProperty("test.xsd.impl","Xerces") == "Saxon")
-  val factory = {
+  def factory = {
     if (useSaxon) {
       val inst = Class.forName("com.saxonica.jaxp.SchemaFactoryImpl").newInstance.asInstanceOf[SchemaFactory]
       inst.setProperty("http://saxon.sf.net/feature/xsd-version","1.1")
@@ -40,6 +40,7 @@ class XSDTestSuite extends FunSuite {
   val testDirs = parentTestDir.listFiles().toList.filter(f => f.isDirectory)
 
   testDirs.foreach(d => {
+    println (s"Running tests on $d...")
     val xsdFiles = d.listFiles().toList.filter(isXSDFile)
     val xsdSources = xsdFiles.map(f => new StreamSource(f).asInstanceOf[Source]).toArray
     val xsd = factory.newSchema(xsdSources)
