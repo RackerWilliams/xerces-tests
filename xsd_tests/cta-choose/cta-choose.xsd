@@ -12,12 +12,12 @@
         This schema provides a place to include/import relevant XSDs
         and defines the current usage element.
     -->
-    <include schemaLocation="core.xsd"/>  <!-- Loads Usage Version 1 -->
-    <include schemaLocation="core2.xsd"/> <!-- Loads Usage Version 2 -->
+    <include schemaLocation="xsd/core.xsd"/>  <!-- Loads Usage Version 1 -->
+    <include schemaLocation="xsd/core2.xsd"/> <!-- Loads Usage Version 2 -->
 
     <!-- Custom Schema -->
     <import namespace="http://docs.rackspace.com/usage/monitoring"
-            schemaLocation="monitoring.xsd"/>
+            schemaLocation="xsd/monitoring.xsd"/>
 
     <!--
         The right type is selected based on the version.
