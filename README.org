@@ -24,7 +24,8 @@ mvn test -Dtest.xsd.impl=Saxon && mvn test
 
 In the xsd_tests directory there will be a test directory named X
 
-X/X.xsd is the XSD we are testing
+X/*.xsd   Contains the XSDs we are the XSD we are testing. All XSDs
+          in the directory will be loaded.
 X/good/*  Contains good instances that should pass validation
 X/bad/*   Contains bad instances that should fail validation
 
