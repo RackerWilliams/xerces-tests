@@ -11,7 +11,7 @@
 
     <complexType name="SampleElement">
         <sequence>
-            <element name="even" type="tst:EvenInt100" minOccurs="0"/>
+            <element name="even" type="tst:EvenInt100" minOccurs="0" maxOccurs="100"/>
         </sequence>
     </complexType>
 
